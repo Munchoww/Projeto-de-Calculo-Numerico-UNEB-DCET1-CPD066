@@ -1,0 +1,36 @@
+voltar = 1
+while voltar == int(1):
+    print(
+    "Este programa tem como proposta, calcular a quantidade de ferro usada na armadura"
+    " ou ferragem para construcao de Pilares e Brocas")
+    Continuar = input("O que calcularemos Hoje? ")
+    if Continuar == str("Pilar") or Continuar == str("pilar"):
+        print("Muito bem Precisaremos de algumas informações da sua obra")
+        AP = input("Qual  a Altura do Pilar? ")
+        QP = input("Qual a quantidade de Pilares? ")
+        LP = input("Qual a largura do pilar? ")
+        P1 = 4 * float(AP)
+        P1_2 = 0.15
+        # R = ((P1*QP)/12)
+        P2 = int(P1) * int(QP)
+        P3 = (int(P2) / 12)
+        P4 = float(LP) / float(AP)
+        P5 = float(P4) * float(LP)
+        P6 = float(P5) * float(AP)
+        P13 = float(P1) * float(QP)
+        print("a metragem de ferro necessaria é: " + str(P13))
+        print("a quantidade de de varas 3/8 que sera usada é " + str(P3))
+        P6_1 = ((((float(AP) / float(P1_2)) * float(LP)) * float(QP)) / 12)
+        print("Essa e a quantidade de varas 1/4 necessaria " + str(round(float(P6_1))))
+        P7 = float(P6) / 12
+        ML = (((float(AP) / float(P1_2)) * float(LP)) * float(QP))
+        print("essa é  a quantidade de estribos necessaria " + str(round(float(ML))))
+        print("Obrigado por Utilizar o Programa")
+        voltar = 0
+    elif Continuar == str("Viga Baldrame"):
+        print("Esta sessão ainda esta em desenvolvimento")
+        voltar = 0
+    else:
+        print("Insira opção valida")
+        voltar = 1
+
