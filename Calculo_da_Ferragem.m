@@ -1,5 +1,4 @@
 clc
-function Calculo_da_Ferragem
 
 disp("Este programa tem como proposta, calcular a quantidade de ferro usada na armadura ou ferragem para construcao de Pilares e Brocas")
 continuar1 = (yes_or_no);
@@ -106,7 +105,7 @@ elseif
    ARR = input("Qual a Altura do Arranque? ");
    HB = PB+0.30+ARR; %altura completa do ferro com o baldrame e o arranque%
    FB = 4*HB; %metragem de ferro em cada broca%
-   MF_B = HB*QB; %metragem de ferro total%
+   MF_B = HB*FB; %metragem de ferro total%
    MF_B2 = MF_B/12; %quantidade de varas%
    QE_B = PB/0.15; %Quantidade de Estribos por Broca%
    QE_B2 = 0.50*QE_B; % Metragem de ferro 1/4 por broca%
@@ -122,26 +121,29 @@ elseif
    disp("")
   fprintf("Essa é a quantidade de estribos por broca %1.2f", round(QE_B))
   disp("")
-  fprintf("Essa é a quantidade total de estribos %1,2f", round(QE_T))
+  fprintf("Essa é a quantidade total de estribos %1.2f", round(QE_T))
   disp("")
-  fprintf("Essa é a metragem de ferro 1/4 necessaria %1,2f", round(ML_E))
+  fprintf("Essa é a metragem de ferro 1/4 necessaria %1.2f", round(ML_E))
 
 elseif( EST == 0)
  OPC = input(" qual tipo de grafico deseja? (1) Barras, (2) torta (3) Simples")
-switch (OPC)
+switch (OPC);
   case 1
    disp"grafico de barras"
-   Estruturas = {'pilar', 'sapata', 'baldrame', ' broca'}
-   resultados = [P2,SP_1,FVB,MF_B]
-   bar(resultados)
+   Estruturas = {'pilar', 'sapata', 'baldrame', ' broca'};
+   resultados = [P2,SP_1,FVB,MF_B];
+   bar(resultados);
    set(gca,'XTickLabel',Estruturas)
    title ("Comparativo de gasto");
    case 2
-   Disp "Grafico de torta"
+   disp "Grafico de torta"
    Estruturas = {'pilar', 'sapata', 'baldrame', ' broca'}
    resultados = [P2; SP_1; FVB; MF_B];
-   pie(Estruturas, resultados);
-   title ("Comparativo de gasto");
+    clf;
+   pie(resultados, Estruturas);
+   colormap ([1,0,0;0,1,0;0,0,1;1,1,0;1,0,1;0,1,1]);
+   axis ([-2,2,-2,2]);
+  title ("Comparativo de gasto""Cheddar", "Swiss", "Camembert");
    case 3
   disp "grafico simples"
 
@@ -179,7 +181,7 @@ SP_2 = SP_1/12;
   ARR = 0.80;
    HB = PB+0.30+ARR; %altura completa do ferro com o baldrame e o arranque%
    FB = 4*HB; %metragem de ferro em cada broca%
-   MF_B = HB*QB; %metragem de ferro total%
+   MF_B = HB*FB; %metragem de ferro total%
    MF_B2 = MF_B/12; %quantidade de varas%
    QE_B = PB/0.15; %Quantidade de Estribos por Broca%
    QE_B2 = 0.50*QE_B; % Metragem de ferro 1/4 por broca%
@@ -195,4 +197,3 @@ SP_2 = SP_1/12;
    title ("Comparativo de gasto");
  endswitch
 endif
-endfunction
