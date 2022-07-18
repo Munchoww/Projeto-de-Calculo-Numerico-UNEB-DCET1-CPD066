@@ -29,6 +29,7 @@ if (EST == 1);
   P1_2= 0.15;
   R = ((P1*QP)/12);
   P2= P1*QP;
+
   P3= ((P1*QP)/12);
   P4= LP/AP;
   P5= P4*LP;
@@ -127,7 +128,7 @@ elseif
 
 elseif( EST == 0)
  OPC = input(" qual tipo de grafico deseja? (1) Barras, (2) torta (3) Simples")
-switch (OPC);
+  switch (OPC);
   case 1
    disp"grafico de barras"
    Estruturas = {'pilar', 'sapata', 'baldrame', ' broca'};
@@ -197,3 +198,4 @@ SP_2 = SP_1/12;
    title ("Comparativo de gasto");
  endswitch
 endif
+teste 
