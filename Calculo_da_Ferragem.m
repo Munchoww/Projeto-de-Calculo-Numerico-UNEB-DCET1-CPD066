@@ -1,5 +1,5 @@
 clc
-
+function Calculo
 disp("Este programa tem como proposta, calcular a quantidade de ferro usada na armadura ou ferragem para construcao de Pilares e Brocas")
 continuar1 = (yes_or_no);
 if (continuar1 == 0);
@@ -198,4 +198,4 @@ SP_2 = SP_1/12;
    title ("Comparativo de gasto");
  endswitch
 endif
-teste 
+endfunction
